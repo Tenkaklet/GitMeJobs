@@ -1,0 +1,11 @@
+<section id="Search" class="ui segment raised">
+<h2 class="ui header">So You're looking for a job, eh?</h2>
+<p>Go ahead, it's ok</p>
+<form class="ui form" (ngSubmit)="search()">
+  <div class="field">
+    <input type="text" placeholder="Search..." [(ngModel)]="input" name="job">
+    <sui-checkbox class="toggle" name="location" [(ngModel)]="useLocation">Use my location</sui-checkbox>
+    <button class="ui button massive" type="submit" [disabled]="!input">Search</button>
+  </div>
+</form>
+</section>
