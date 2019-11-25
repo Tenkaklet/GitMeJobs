@@ -10,7 +10,7 @@ export class GithubService {
   constructor(private http: HttpClient) { }
 
   searchJobs(job: string) {
-    return;
+    return this.http.get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${job}`);
   }
 
   searchByLocation(lat, long, job) {

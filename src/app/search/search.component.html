@@ -4,7 +4,6 @@
 <form class="ui form" (ngSubmit)="search()">
   <div class="field">
     <input type="text" placeholder="Search..." [(ngModel)]="input" name="job">
-    <sui-checkbox class="toggle" name="location" [(ngModel)]="useLocation">Use my location</sui-checkbox>
     <button class="ui button massive" type="submit" [disabled]="!input">Search</button>
   </div>
 </form>

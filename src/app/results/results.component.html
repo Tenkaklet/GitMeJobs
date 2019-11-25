@@ -1,9 +1,23 @@
-
 <sui-dimmer class="inverted" [(isDimmed)]="pageDimmed">
   <div class="ui text loader">Scouring the web for you :)</div>
 </sui-dimmer>
 
-<section class="ui center aligned container">
-  <h1 class="ui header">Results</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nobis. Commodi deleniti eius facere, molestiae facilis, vitae incidunt quisquam doloribus iure minus ratione amet illo labore ipsum tenetur iusto dolorum.</p>
+<section class="ui center aligned container segment">
+  <h1 class="ui header">Results for {{ searched }} <small>{{ results.length }} results</small></h1>
+  <div class="ui two centered grid">
+      <sui-accordion class="styled fluid">
+        <sui-accordion-panel *ngFor="let result of results">
+          <div title>
+            <i class="dropdown icon"></i>
+            {{result.title}} | {{ result.location }}
+          </div>
+          <div content>
+            <img [src]="result.company_logo" [alt]="result.title">
+            <div [innerHTML]="result.description"></div>
+            <div class="ui raised segment" [innerHTML]="result.how_to_apply"></div>
+            <button class="ui basic positive button big apply">Apply</button>
+          </div>
+        </sui-accordion-panel>
+      </sui-accordion>
+  </div>
 </section>
