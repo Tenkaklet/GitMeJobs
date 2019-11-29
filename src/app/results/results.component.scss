@@ -5,3 +5,23 @@ img {
 button.apply {
   margin: 20px auto;
 }
+
+#Search {
+  margin: 2em auto;
+  text-align: center;
+
+  input {
+    width: 70%;
+  }
+
+  button {
+    margin: 0.4em auto;
+    display: block;
+  }
+
+  .toggle {
+    top: 10px;
+    left: 10px;
+  }
+}
+

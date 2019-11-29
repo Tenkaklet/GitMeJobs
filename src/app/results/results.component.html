@@ -2,6 +2,18 @@
   <div class="ui text loader">Scouring the web for you :)</div>
 </sui-dimmer>
 
+<section id="Search" class="ui segment raised">
+  <form class="ui form" (ngSubmit)="search()">
+    <div class="field">
+      <input type="text" placeholder="Search..." [(ngModel)]="input" name="job">
+      <button class="ui button massive" type="submit" [disabled]="!input">Search</button>
+      <sui-checkbox class="slider" [(ngModel)]="useLocation" name="location">My location</sui-checkbox>
+    </div>
+  </form>
+  </section>
+
+
+
 <section class="ui center aligned container segment">
   <h1 class="ui header">Results for {{ searched }} <small>{{ results.length }} results</small></h1>
   <div class="ui two centered grid">
@@ -15,7 +27,7 @@
             <img [src]="result.company_logo" [alt]="result.title">
             <div [innerHTML]="result.description"></div>
             <div class="ui raised segment" [innerHTML]="result.how_to_apply"></div>
-            <button class="ui basic positive button big apply">Apply</button>
+            <button class="ui basic positive button big apply" (click)="apply(result.url)">Apply</button>
           </div>
         </sui-accordion-panel>
       </sui-accordion>

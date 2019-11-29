@@ -14,6 +14,7 @@ export class GithubService {
   }
 
   searchByLocation(lat, long, job) {
-    console.log(lat, long, job);
+    // tslint:disable-next-line: max-line-length
+    return this.http.get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${job}&lat=${lat}&long=${long}`);
   }
 }
